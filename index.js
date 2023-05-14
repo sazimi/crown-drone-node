@@ -30,12 +30,12 @@ const main = async () => {
                 if (accelerometer.acceleration > 1 && !isLeft) {
                     if (accelerometer.pitch > 30) {
                         isLeft = true;
-                        wss.send('left 50');
+                        wss.send('left50');
                     }
 
                     if (accelerometer.pitch < -30 && !isRight) {
                         isRight = true;
-                        wss.send('right 50');
+                        wss.send('right50');
                     }
                 }
 
@@ -49,7 +49,7 @@ const main = async () => {
     console.log("Logged in");
 
     notion.focus().subscribe((focus) => {
-        if (focus.probability > 0.1) {
+        if (focus.probability > 0.2) {
             if (!isFlying) {
                 isFlying = true;
                 wss.send('takeoff');
