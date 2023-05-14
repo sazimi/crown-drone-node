@@ -23,7 +23,7 @@ const main = async () => {
             password: process.env.CROWN_PASS
         }).then(() => {
             notion.selectDevice((devices) => {
-                return devices.find((device) => device.deviceNickname === "Crown-E0D");
+                return devices.find((device) => device.deviceNickname === "Crown-440");
             });
             notion.accelerometer().subscribe(accelerometer => {
 
